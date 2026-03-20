@@ -1,0 +1,21 @@
+{
+  "name": "websockets-jsmastery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+    "scripts": {
+    "test": "npm run test",
+    "dev": "node --watch server.js"
+
+  },
+  "author": "Dagogo Clinton Uranta",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "ws": "^8.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/ws": "^8.18.1"
+  }
+}
