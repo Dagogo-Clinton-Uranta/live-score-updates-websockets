@@ -25,7 +25,7 @@ wss.on('connection',(socket,request)=>{
         //2: CLOSING
         //3: CLOSED
 
-     if(client.readyState === Websocket.OPEN){cleint.send(`Server Broadcast: ${message}`)}
+     if(client.readyState === WebSocket.OPEN){client.send(`Server Broadcast: ${message}`)}
     })
 
 
@@ -45,3 +45,6 @@ wss.on('connection',(socket,request)=>{
    })
 
 })
+
+console.log("Websocket Server is live on ws://localhost:8080")
+
