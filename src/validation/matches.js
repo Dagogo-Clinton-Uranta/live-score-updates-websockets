@@ -14,7 +14,11 @@ export const matchIdParamSchema = z.object({
     id: z.coerce.number().int.positive()
 });
 
-const isoDateString = z.string().refine((val)=> !isNan(Date.parse(val)))
+//const isoDateString = z.string().refine((val)=> !isNan(Date.parse(val)))
+
+const isoDateString = z.iso.datetime(); //in alignment with zod 4
+
+
 
 export const createMatchSchema = z.object({
     sport:z.string().min(1),

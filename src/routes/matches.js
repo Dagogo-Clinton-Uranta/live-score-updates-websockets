@@ -38,11 +38,13 @@ matchRouter.get('/',async (req,res)=>{
 
 matchRouter.post('/',async (req,res)=>{
     const parsed = createMatchSchema.safeParse(req.body);
-    const {data: {startTime,endTime,homeScore,awayScore}} = parsed;
+   
 
     if(!parsed.success){
-     return res.status(400).json({error:"Invalid Payload", details:JSON.stringify:parsed.error})
+     return res.status(400).json({error:"Invalid Payload", details :parsed.error.issues})
     }
+
+    const {data: {startTime,endTime,homeScore,awayScore}} = parsed;
 
 
     try{
@@ -60,7 +62,7 @@ matchRouter.post('/',async (req,res)=>{
     }
     catch(e){
         res.status(500).json({
-            error:"Failed to create match.",details: JSON.stringify(e) })
+            error:"Failed to create match.",details: parsed.error.issues })
         }
     
 
