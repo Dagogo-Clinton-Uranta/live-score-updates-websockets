@@ -54,7 +54,7 @@ matchRouter.post('/',async (req,res)=>{
         endTime:new Date(endTime),
         homeScore:??0,
         awayScore:??0,
-        status:getMatchStatus(startTime,endTime)
+        status:getMatchStatus(startTime,endTime) 
 
        }).returning()
 
